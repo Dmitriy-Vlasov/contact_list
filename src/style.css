@@ -1,0 +1,225 @@
+body {
+    padding: 50px;
+}
+
+.contactsFilter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactsList {
+    margin: 40px 0;
+}
+
+.deleteButton {
+    color: red;
+    font-weight: 900;
+}
+
+.editButton {
+    color: yellowgreen;
+    font-weight: 900;
+}
+
+.editButton, .deleteButton:hover {
+    cursor: pointer;
+}
+
+thead {
+    font-weight: 700;
+}
+
+tbody tr:nth-child(2n - 1) {
+    background-color: rgb(234, 242, 245);
+}
+
+tbody td {
+    padding-left: 5px;
+}
+
+.popupBackground {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popupBackground:hover {
+    cursor: pointer;
+}
+
+.showPopup {
+    display: flex;
+}
+
+.addContactPopup {
+    padding: 20px;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.addContactForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.addContactForm {
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.phoneNumberInput {
+    background-color: rgb(234, 242, 245);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    margin-left: 0;
+}
+
+.phoneNumbersBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+
+.addContactForm input {
+    margin-left: 0;
+}
+
+.addContact {
+    margin: 0 auto 50px;
+}
+
+.addNumber {
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color: grey;
+}
+
+.addNumber:hover {
+    cursor: pointer;
+    color:  #1EAEDB;
+    margin-left: 0;
+}
+
+.select {
+    float: right;
+    color: #1EAEDB;
+}
+
+.select:hover {
+    cursor: pointer;
+}
+
+.numberItem {
+    padding-right: 20px;
+    position: relative;
+}
+
+.numberSelect {
+    display: none;
+    position: absolute;
+    top: 107%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 9999999;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+}
+
+.showNumberSelect {
+    display: flex;
+}
+
+.numberSelect .telephoneItem {
+    padding: 10px 0 10px 15px;
+    height: 40px;
+    width: 100%;
+    border-bottom: solid 1px lightgray;
+}
+
+.hiddenBlock {
+    position: relative;
+    z-index: 9999998;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.red {
+    border: solid 1px red;
+}
+
+.autoFilling {
+    color: lightslategrey;
+}
+
+.birthdayAlertsBlock {
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    padding: 0 20px;
+    opacity: 0;
+}
+
+.birthdayAlert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 320px;
+    height: 80px;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    padding: 0 30px;
+    margin: 10px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.alertImage {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.birthdayName {
+    font-weight: 900;
+    color: #1EAEDB;
+}
+
+.idInput {
+    display: none;
+}

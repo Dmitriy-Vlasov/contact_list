@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row contactsFilter">
+        <input type="text" class="eleven columns filterInput" placeholder="Find your contact"/>
+      </div>
+      <div class="contacts">
+        <h1 class="contactTitle">Your contacts</h1>
+        <button class="addContact button-primary">Add contact</button>
+        <div class="ten column">
+            <table class="u-full-width">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>E-mail</th>
+                    <th>Telephone number</th>
+                    <th>Date of birth</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody class="contactsList"></tbody>
+              </table>
+        </div>
+      </div>
+    </div>
+    <div class="popupBackground">
+        <div class="four columns addContactPopup">
+            <h2>Create new contact</h2>
+            <form name="addContactForm" class="addContactForm">
+                <input class="idInput" id="idInput" type="text" class="eleven columns" id="name" placeholder="Name"></input>
+                <input type="text" class="eleven columns" id="name" placeholder="Name"></input>
+                <input type="text" class="eleven columns" id="surname" placeholder="Surname"></input>
+                <input type="email" class="eleven columns" id="email" type="email" placeholder="E-mail"></input>
+                <div class="phoneNumberInput column"> 
+                    <div class="phoneNumbersBlock row">
+                      <input type="tel" class="eleven columns telephoneNumber" placeholder="Main number">
+                    </div>
+                    <div class="addNumber">+Add</div>
+                </div>
+                <input type="date" class="eleven columns" id="dateOfBirth" placeholder="Date of birth"></input>
+                <button class="submitContactForm button-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="birthdayAlertsBlock"></div>
+
+    <template id="contactTemplate">
+      <tr data-id="{{id}}">
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{email}}</td>
+        <td class="numberItem">{{telephoneNumbers}}
+          <span class="select">{{select}}</span>
+          <div class="numberSelect"></div>
+        </td>
+        <td>{{dateOfBirth}}</td>
+        <td class="editButton">&#10000</td>
+        <td class="deleteButton">x</td>
+      </tr>
+    </template>
+
+    <template id="birthdayAlertTemplate">
+      <div class="birthdayAlert">
+        <div class="alertImage"><img src="https://img.icons8.com/office/40/000000/gift.png"/></div>
+        <div class="alertText">Today is <a href="tel:{{telephone}}"><span class="birthdayName">{{name}}’s</span></a> birthday</div>
+      </div>
+    </template>
+  </body>
+</html>
