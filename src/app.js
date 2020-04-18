@@ -63,7 +63,7 @@ function animeShow() {
     anime({
         targets: birthdayAlertsBlock,
         opacity: 1,
-        duration: 3000
+        duration: 1500
     });
 };
 
@@ -71,7 +71,7 @@ function animeHide() {
     anime({
         targets: birthdayAlertsBlock,
         opacity: 0,
-        duration: 3000,
+        duration: 1500,
         complete: deleteBirthdayAlert
     });
 };
@@ -156,15 +156,23 @@ function editContact(e) {
 };
 
 function editContactData() {
-    const editedContact = contactsData.find(el => el.id == idInput.value);
+    const editedContactData = contactsData.find(el => el.id == idInput.value);
 
-    editedContact.name = nameInput.value;
-    editedContact.surname = surnameInput.value;
-    editedContact.email = emailInput.value;
-    editedContact.telephoneNumbers = getTelephoneNumber();
-    editedContact.dateOfBirth = dateOfBirthInput.value;
-    editedContact.severalNumber = editedContact.telephoneNumbers.length > 1 ? editedContact.severalNumber = true : editedContact.severalNumber = false;
+    editedContactData.name = nameInput.value;
+    editedContactData.surname = surnameInput.value;
+    editedContactData.email = emailInput.value;
+    editedContactData.telephoneNumbers = getTelephoneNumber();
+    editedContactData.dateOfBirth = dateOfBirthInput.value;
+    editedContactData.severalNumber = editedContactData.telephoneNumbers.length > 1 ? editedContactData.severalNumber = true : editedContactData.severalNumber = false;
+
+    updateContact(editedContactData);
+    
 };
+
+function updateContact(editedContactData) {
+    const editedContact = [...contactsList.children].find(el => el.getAttribute('data-id') == editedContactData.id);
+    editedContact.innerHTML = renderContact(editedContactData); 
+}
 
 function createAddedInput(editedContact) {
     for(let i = 0; i < editedContact.telephoneNumbers.length - 1; i++) {
@@ -222,7 +230,6 @@ function onAddContactFormSubmit(e) {
     } else if (validForm() && idInput.value !== '') {
         editContactData(e);
         setData();
-        renderContactList();
         hidePopup();
         clearAddedNumberInput();
         clearInputForm();
